@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José Manuel Alviar Ccallme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            900: '#0e2240',
+                            800: '#162f56',
+                        },
+                        brand: {
+                            blue: '#1954e6',
+                            blueHover: '#1444bd',
+                            card: '#ecf0f9',
+                            border: '#dde4f3',
+                            text: '#111b36',
+                            muted: '#4d5b7c'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #ffffff;
+            color: #111b36;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, .nav-brand {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .avatar-frame {
+            box-shadow: 0 10px 25px -5px rgba(14, 34, 64, 0.12), 0 4px 10px -2px rgba(14, 34, 64, 0.06);
+        }
+    </style>
+</head>
+<body id="inicio" class="min-h-screen flex flex-col justify-between">
+    <header class="bg-[#0e2240] text-white w-full sticky top-0 z-50 shadow-sm">
+        <div class="max-w-[1140px] mx-auto px-5 sm:px-8 h-[64px] flex items-center justify-between">
+            <a href="#inicio" class="flex items-center gap-3 group">
+                <svg class="w-8 h-8 text-white transition-transform duration-300 group-hover:scale-105 shrink-0" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="55" width="52" height="3.5" rx="1.75" fill="currentColor" opacity="0.85"/>
+                    <rect x="10" y="42" width="8" height="10" rx="2" fill="currentColor"/>
+                    <rect x="22" y="36" width="8" height="16" rx="2" fill="currentColor"/>
+                    <rect x="34" y="32" width="8" height="20" rx="2" fill="currentColor"/>
+                    <rect x="46" y="24" width="8" height="28" rx="2" fill="currentColor"/>
+                    <path d="M12 35L25 21L33 27L49 12" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M41 11H51V21" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="nav-brand font-bold text-[15px] sm:text-[17px] tracking-tight text-white">José Manuel Alviar Ccallme</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-[14px] font-medium">
+                <a href="#inicio" class="bg-[#1954e6] hover:bg-[#1444bd] text-white font-semibold px-4 py-1.5 rounded-full transition-colors">
+                    Inicio
+                </a>
+                <a href="#sobre-mi" class="text-white/95 hover:text-white transition-colors">
+                    Sobre mí
+                </a>
+                <a href="#cursos" class="text-white/95 hover:text-white transition-colors">
+                    Cursos
+                </a>
+                <a href="#profesores" class="text-white/95 hover:text-white transition-colors">
+                    Profesores
+                </a>
+                <a href="#companeros" class="text-white/95 hover:text-white transition-colors">
+                    Compañeros
+                </a>
+            </nav>
+
+            <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors">
+                <i class="fa-solid fa-bars text-lg"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0e2240] border-t border-white/10 px-6 py-4 space-y-3">
+            <a href="#inicio" class="block bg-[#1954e6] text-white font-semibold px-4 py-2 rounded-full text-center text-sm">Inicio</a>
+            <a href="#sobre-mi" class="block text-white/90 hover:text-white px-4 py-1.5 text-sm">Sobre mí</a>
+            <a href="#cursos" class="block text-white/90 hover:text-white px-4 py-1.5 text-sm">Cursos</a>
+            <a href="#profesores" class="block text-white/90 hover:text-white px-4 py-1.5 text-sm">Profesores</a>
+            <a href="#companeros" class="block text-white/90 hover:text-white px-4 py-1.5 text-sm">Compañeros</a>
+        </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-[1000px] mx-auto px-5 sm:px-8 pt-10 pb-8">
+
+        <section class="flex flex-col md:flex-row items-center justify-center gap-7 md:gap-12 mb-10">
+            <div class="relative shrink-0">
+                <div class="w-[155px] h-[155px] sm:w-[170px] sm:h-[170px] rounded-full p-[6px] bg-white avatar-frame border border-slate-100">
+                    <img 
+                        src="images/perfil.jpg" 
+                        alt="Foto de perfil de José Manuel Alviar Ccallme" 
+                        class="w-full h-full object-cover rounded-full bg-slate-200"
+                    >
+                </div>
+            </div>
+            <div class="text-center md:text-left">
+                <h1 class="text-[28px] sm:text-[36px] lg:text-[42px] font-extrabold text-[#111b36] leading-tight tracking-tight">
+                    José Manuel Alviar Ccallme
+                </h1>
+                <p class="text-[#4d5b7c] text-[15px] sm:text-[17px] mt-1.5 font-normal">
+                    Apasionado por aprender y explorar nuevas cosas.
+                </p>
+                <div class="w-[46px] h-[4px] bg-[#1954e6] rounded-full mt-3.5 mx-auto md:mx-0"></div>
+            </div>
+        </section>
+
+        <div class="space-y-4">
+
+            <section id="sobre-mi" class="scroll-mt-20 bg-[#ecf0f9] border border-[#dfe6f5] rounded-[16px] px-6 py-5 sm:px-8 sm:py-6 transition-all hover:border-[#cdd7ef]">
+                <div class="flex items-start gap-4 sm:gap-5">
+                    <div class="w-8 flex justify-center pt-1 shrink-0">
+                        <i class="fa-solid fa-user text-[#1954e6] text-[24px]"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-[19px] sm:text-[20px] font-bold text-[#111b36] mb-3">
+                            Sobre mí
+                        </h2>
+                        <div class="text-[#1f2937] text-[14.5px] sm:text-[15px] leading-[1.65] text-justify space-y-3">
+                            <p>
+                                Mi nombre es José Manuel Alviar Ccallme, tengo 17 años y soy una persona interesada en el aprendizaje constante, la tecnología y el desarrollo personal.
+                            </p>
+                            <p>
+                                Actualmente, estudio Ciencias de Datos en la Universidad Católica San Pablo, en Arequipa, donde busco adquirir nuevos conocimientos y desarrollar habilidades que contribuyan a mi formación profesional. Me gusta aprender cosas nuevas, explorar temas relacionados con la tecnología y asumir retos que me permitan crecer y salir de mi zona de confort.
+                            </p>
+                            <p>
+                                Fuera del ámbito académico, disfruto de los deportes de aventura, especialmente el rafting y la escalada, actividades que me permiten experimentar nuevos desafíos, conocer nuevos entornos y poner a prueba mis propias capacidades. Considero que cada experiencia representa una oportunidad para aprender, superarme y crecer, tanto en el ámbito académico como en el personal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contacto" class="scroll-mt-20 bg-[#ecf0f9] border border-[#dfe6f5] rounded-[16px] px-6 py-5 sm:px-8 sm:py-6 transition-all hover:border-[#cdd7ef]">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="sm:w-[32%] flex justify-center sm:justify-start sm:pl-12">
+                        <h2 class="text-[19px] sm:text-[20px] font-bold text-[#111b36]">
+                            Contacto
+                        </h2>
+                    </div>
+
+                    <div class="hidden sm:block w-[1px] h-9 bg-[#cbd5e1]"></div>
+
+                    <div class="flex-1 flex items-center justify-center gap-12 sm:gap-16">
+                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-[#0e2240] hover:text-[#1954e6] transition-transform duration-200 hover:scale-110">
+                            <i class="fa-brands fa-github text-[32px]"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jos%C3%A9-manuel-alviar-6889b33a3/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-[#0e2240] hover:text-[#1954e6] transition-transform duration-200 hover:scale-110">
+                            <i class="fa-brands fa-linkedin text-[32px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cursos" class="scroll-mt-20 bg-white border border-[#e2e8f0] rounded-[16px] px-6 py-5 sm:px-8 sm:py-6 shadow-[0_2px_10px_rgba(14,34,64,0.02)] transition-all hover:border-[#cbd5e1]">
+                <div class="flex items-start gap-4 sm:gap-5">
+                    <div class="w-8 flex justify-center pt-1 shrink-0">
+                        <i class="fa-solid fa-graduation-cap text-[#1954e6] text-[24px]"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-[19px] sm:text-[20px] font-bold text-[#111b36] mb-3">
+                            Mis cursos
+                        </h2>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-[#1f2937] text-[14.5px] sm:text-[15px]">
+                            <li class="flex items-center gap-3">
+                                <span class="w-[6px] h-[6px] rounded-full bg-[#1954e6] shrink-0"></span>
+                                <span>Fundamentos de la Programación</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-[6px] h-[6px] rounded-full bg-[#1954e6] shrink-0"></span>
+                                <span>Comunicación</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-[6px] h-[6px] rounded-full bg-[#1954e6] shrink-0"></span>
+                                <span>Introducción a la Vida Universitaria</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-[6px] h-[6px] rounded-full bg-[#1954e6] shrink-0"></span>
+                                <span>Introducción a la Computación</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-[6px] h-[6px] rounded-full bg-[#1954e6] shrink-0"></span>
+                                <span>Fundamentos Matemáticos para Computación</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-[6px] h-[6px] rounded-full bg-[#1954e6] shrink-0"></span>
+                                <span>Lógica</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="profesores" class="scroll-mt-20 bg-[#ecf0f9] border border-[#dfe6f5] rounded-[16px] px-6 py-5 sm:px-8 sm:py-6 transition-all hover:border-[#cdd7ef]">
+                <div class="flex items-start gap-4 sm:gap-5">
+                    <div class="w-8 flex justify-center pt-1 shrink-0">
+                        <i class="fa-solid fa-chalkboard-user text-[#1954e6] text-[24px]"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-[19px] sm:text-[20px] font-bold text-[#111b36] mb-4">
+                            Mis profesores
+                        </h2>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                            <div class="bg-white border border-[#dde4f3] rounded-[12px] p-4 flex items-center gap-3.5 shadow-sm">
+                                <img src="images/prof,jessenia.jpg" alt="Foto Profesor 1" class="w-14 h-14 rounded-full object-cover border border-slate-200 shrink-0">
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-[#111b36] text-[14px] leading-tight break-words">Yessenia Deysi Yari Ramos</h3>
+                                    <p class="text-[#4d5b7c] text-[12px] line-clamp-2 leading-snug mt-1">Fundamentos de la Programación</p>
+                                    <a href="https://mail.google.com/mail/u/0/?fs=1&to=ydyari@ucsp.edu.pe&tf=cm" class="inline-flex items-center gap-1.5 text-[#1954e6] hover:text-[#1444bd] text-[12px] font-semibold mt-1.5">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <span>Gmail</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="bg-white border border-[#dde4f3] rounded-[12px] p-4 flex items-center gap-3.5 shadow-sm">
+                                <img src="images/prof.angel.webp" alt="Foto Profesor 2" class="w-14 h-14 rounded-full object-cover border border-slate-200 shrink-0">
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-[#111b36] text-[14px] leading-tight break-words">Angel Rodríguez Cruz</h3>
+                                    <p class="text-[#4d5b7c] text-[12px] line-clamp-2 leading-snug mt-1">Comunicación</p>
+                                    <a href="https://mail.google.com/mail/u/0/?fs=1&to=noreplyvirtual@ucsp.edu.pe&tf=cm" class="inline-flex items-center gap-1.5 text-[#1954e6] hover:text-[#1444bd] text-[12px] font-semibold mt-1.5">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <span>Gmail</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="bg-white border border-[#dde4f3] rounded-[12px] p-4 flex items-center gap-3.5 shadow-sm">
+                                <img src="https://ui-avatars.com/api/?name=Profesor+3&background=0e2240&color=fff" alt="Foto Profesor 3" class="w-14 h-14 rounded-full object-cover border border-slate-200 shrink-0">
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-[#111b36] text-[14px] leading-tight break-words">Ponce Reinoso Gabriela</h3>
+                                    <p class="text-[#4d5b7c] text-[12px] line-clamp-2 leading-snug mt-1">Introducción a la Vida Universitaria</p>
+                                    <a href="https://www.linkedin.com/in/gabriela-ponce-reinoso-885922127/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[#1954e6] hover:text-[#1444bd] text-[12px] font-semibold mt-1.5">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                        <span>LinkedIn</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="bg-white border border-[#dde4f3] rounded-[12px] p-4 flex items-center gap-3.5 shadow-sm">
+                                <img src="images/prof.ernesto.jpg" alt="Foto Profesor 4" class="w-14 h-14 rounded-full object-cover border border-slate-200 shrink-0">
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-[#111b36] text-[14px] leading-tight break-words">Ernesto Cuadros Vargas</h3>
+                                    <p class="text-[#4d5b7c] text-[12px] line-clamp-2 leading-snug mt-1">Introducción a la Computación</p>
+                                    <div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1.5">
+                                        <a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[#1954e6] hover:text-[#1444bd] text-[11.5px] font-semibold">
+                                            <i class="fa-brands fa-linkedin"></i>
+                                            <span>LinkedIn</span>
+                                        </a>
+                                        <span class="text-slate-300">|</span>
+                                        <a href="https://socios.spc.org.pe/ecuadros" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[#1954e6] hover:text-[#1444bd] text-[11.5px] font-semibold">
+                                            <i class="fa-solid fa-globe"></i>
+                                            <span>Sitio web</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white border border-[#dde4f3] rounded-[12px] p-4 flex items-center gap-3.5 shadow-sm">
+                                <img src="images/prof.sabrina.jpg" alt="Foto Profesor 5" class="w-14 h-14 rounded-full object-cover border border-slate-200 shrink-0">
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-[#111b36] text-[14px] leading-tight break-words">Sabrina Graciela Suarez Calcia</h3>
+                                    <p class="text-[#4d5b7c] text-[12px] line-clamp-2 leading-snug mt-1">Fundamentos Matemáticos para Computación</p>
+                                    <a href="https://mail.google.com/mail/u/0/?fs=1&to=sgsuarez@ucsp.edu.pe&tf=cm" class="inline-flex items-center gap-1.5 text-[#1954e6] hover:text-[#1444bd] text-[12px] font-semibold mt-1.5">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <span>Gmail</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="bg-white border border-[#dde4f3] rounded-[12px] p-4 flex items-center gap-3.5 shadow-sm">
+                                <img src="images/prof.kristell.jpg" alt="Foto Profesor 6" class="w-14 h-14 rounded-full object-cover border border-slate-200 shrink-0">
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-[#111b36] text-[14px] leading-tight break-words">Kristel Gisselle Loayza cruz</h3>
+                                    <p class="text-[#4d5b7c] text-[12px] line-clamp-2 leading-snug mt-1">Lógica</p>
+                                    <a href="https://www.linkedin.com/in/kristel-gisselle-loayza-cruz-abb3b039b/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[#1954e6] hover:text-[#1444bd] text-[12px] font-semibold mt-1.5">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                        <span>LinkedIn</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="companeros" class="scroll-mt-20 bg-white border border-[#e2e8f0] rounded-[16px] px-6 py-5 sm:px-8 sm:py-6 shadow-[0_2px_10px_rgba(14,34,64,0.02)] transition-all hover:border-[#cbd5e1]">
+                <div class="flex items-start gap-4 sm:gap-5">
+                    <div class="w-8 flex justify-center pt-1 shrink-0">
+                        <i class="fa-solid fa-users text-[#1954e6] text-[24px]"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-[19px] sm:text-[20px] font-bold text-[#111b36] mb-4">
+                            Compañeros
+                        </h2>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+                            <div class="bg-[#ecf0f9]/70 border border-[#dfe6f5] rounded-[12px] px-4 py-3 flex items-center justify-between gap-3">
+                                <span class="font-medium text-[#111b36] text-[14.5px]">Nombre del Compañero 1</span>
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-[#1954e6] hover:bg-[#1444bd] text-white text-[12.5px] font-semibold px-3 py-1.5 rounded-full transition-colors shrink-0">
+                                    <span>Sitio web</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+
+                            <div class="bg-[#ecf0f9]/70 border border-[#dfe6f5] rounded-[12px] px-4 py-3 flex items-center justify-between gap-3">
+                                <span class="font-medium text-[#111b36] text-[14.5px]">Nombre del Compañero 2</span>
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-[#1954e6] hover:bg-[#1444bd] text-white text-[12.5px] font-semibold px-3 py-1.5 rounded-full transition-colors shrink-0">
+                                    <span>Sitio web</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+
+                            <div class="bg-[#ecf0f9]/70 border border-[#dfe6f5] rounded-[12px] px-4 py-3 flex items-center justify-between gap-3">
+                                <span class="font-medium text-[#111b36] text-[14.5px]">Nombre del Compañero 3</span>
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-[#1954e6] hover:bg-[#1444bd] text-white text-[12.5px] font-semibold px-3 py-1.5 rounded-full transition-colors shrink-0">
+                                    <span>Sitio web</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+
+                            <div class="bg-[#ecf0f9]/70 border border-[#dfe6f5] rounded-[12px] px-4 py-3 flex items-center justify-between gap-3">
+                                <span class="font-medium text-[#111b36] text-[14.5px]">Nombre del Compañero 4</span>
+                                <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-[#1954e6] hover:bg-[#1444bd] text-white text-[12.5px] font-semibold px-3 py-1.5 rounded-full transition-colors shrink-0">
+                                    <span>Sitio web</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="w-full py-5 text-center">
+        <p class="text-[#1f2937] text-[13.5px] font-normal">
+            © 2026 José Manuel Alviar Ccallme. Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
